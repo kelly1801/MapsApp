@@ -1,5 +1,5 @@
 import { Map, Marker } from "mapbox-gl";
-import { MapState } from "../../interfaces/types";
+import { MapState } from "../../interfaces/maps.types";
 
 type MapAction = 
 | { type: "setMap"; payload: Map }

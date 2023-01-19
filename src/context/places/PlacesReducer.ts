@@ -1,4 +1,4 @@
-import { PlacesState, PlacesAction } from "../../interfaces/types";
+import { PlacesState, PlacesAction } from "../../interfaces/maps.types";
 
 
 export const placesReducer = ( state:PlacesState, action:PlacesAction): PlacesState => {

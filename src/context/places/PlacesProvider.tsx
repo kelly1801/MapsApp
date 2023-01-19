@@ -7,7 +7,7 @@ import {
   PlacesProviderProps,
   PlacesResponse,
   PlacesState,
-} from "../../interfaces/types";
+} from "../../interfaces/maps.types";
 import { searchApi } from "../../apis";
 
 const InitialState: PlacesState = {

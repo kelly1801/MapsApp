@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { MapContextProps } from "../../interfaces/types";
+import { MapContextProps } from "../../interfaces/maps.types";
 
 
 
