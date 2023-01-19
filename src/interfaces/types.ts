@@ -1,7 +1,45 @@
-import { Map } from "mapbox-gl";
+import { Map, Marker } from "mapbox-gl";
+
+export interface PlacesResponse {
+  type:        string;
+  query:       number[];
+  features:    Feature[];
+  attribution: string;
+}
+
+export interface Feature {
+  id:         string;
+  type:       string;
+  place_type: string[];
+  relevance:  number;
+  properties: Properties;
+  text:       string;
+  place_name: string;
+  center:     number[];
+  geometry:   Geometry;
+  context:    Context[];
+}
+
+export interface Context {
+  id:          string;
+  text:        string;
+  wikidata?:   string;
+  short_code?: string;
+}
+
+export interface Geometry {
+  type:        string;
+  coordinates: number[];
+}
+
+export interface Properties {
+  accuracy: string;
+}
+
 export interface MapState {
   isMapReady: boolean;
   map?: Map;
+  markers: Marker[]
 }
 export interface MapsProviderProps {
   children: JSX.Element | JSX.Element[];
@@ -12,19 +50,23 @@ export interface MapContextProps {
   setMap: (map: Map) => void;
 }
 export interface PlacesContextProps {
-    isLoading: boolean;
-    userLocation?: [ number, number ];
-
+  isLoading: boolean;
+  userLocation?: [number, number];
+  isLoadingPlaces: boolean,
+  places: Feature[],
+  searchPlacesByQuery: (query: string) => Promise<Feature[]>;
 }
 export interface PlacesState {
-    isLoading: boolean;
-    userLocation?: [number, number];
-  }
- export interface PlacesProviderProps {
-    children: JSX.Element | JSX.Element[];
-  }
-export interface PlacesAction {
-    type: "setUserLocation";
-    payload: [number, number];
-  };
-  
+  isLoading: boolean;
+  userLocation?: [number, number],
+  isLoadingPlaces: boolean,
+  places: Feature[]
+}
+export interface PlacesProviderProps {
+  children: JSX.Element | JSX.Element[];
+}
+export type PlacesAction = 
+| { type: "setUserLocation", payload: [number, number]}
+| { type: "setPlaces", payload: Feature[]} 
+| { type: "setLoadingPlaces" }
+

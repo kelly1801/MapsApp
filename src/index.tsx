@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import MapsApp from './MapsApp';
 import mapboxgl from 'mapbox-gl';
  
-mapboxgl.accessToken = 'pk.eyJ1Ijoia2VsbHkxODAxIiwiYSI6ImNsYzJiMnc2aTRjNDMzdnBsNHBleDkwY2cifQ.aaU-F2sWTHiERcOTn1C1aA';
+mapboxgl.accessToken = 'pk.eyJ1Ijoia2VsbHkxODAxIiwiYSI6ImNsYzJiMnc2aTRjNDMzdnBsNHBleDkwY2cifQ.aaU-F2sWTHiERcOTn1C1aA'
 
 
 if (!navigator.geolocation) {
