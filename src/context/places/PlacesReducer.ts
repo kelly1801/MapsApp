@@ -1,9 +1,5 @@
-import { PlacesState } from "./PlacesProvider";
+import { PlacesState, PlacesAction } from "../../interfaces/types";
 
-type PlacesAction = {
-  type: "setUserLocation";
-  payload: [number, number];
-};
 
 export const placesReducer = ( state:PlacesState, action:PlacesAction): PlacesState => {
   const { type, payload } = action;

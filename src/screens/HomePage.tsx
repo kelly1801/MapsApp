@@ -1,11 +1,11 @@
-import { PlacesProvider } from "../context"
-import { MapView } from "../components"
+import { MapView,  BtnMyLocation } from "../components"
 export const HomePage = () => {
   return (
-    <PlacesProvider>
+  
         <>
         <MapView/>
+        <BtnMyLocation/>
         </>
-    </PlacesProvider>
+  
   )
 }
